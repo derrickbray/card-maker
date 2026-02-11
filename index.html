@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Social Media Meta tags -->
+  <meta name="theme-color" content="#222326" />
+  <link rel="apple-touch-icon" sizes="180x180" href="#" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/ico_32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="#" />
+  <title>Card Maker Thing</title>
+  <link rel="stylesheet" href="js/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+  <!-- <script type="text/javascript" src="./js/dist/jquery.vmap.js"></script>
+  <script type="text/javascript" src="./js/dist/maps/jquery.vmap.usa.js" charset="utf-8"></script> -->
+</head>
+
+<body>
+  <header>
+    <!-- Header -->
+     <div class="heading">
+      <div class="container">
+        <div class="heading-content">
+          <div class="heading-segment">
+            <div class="title">Card Maker Thing</div>
+          </div>
+          <div class="heading-segment">segment here too</div>
+        </div>
+      </div>
+     </div>
+  </header>
+  <main>
+    <!-- Main -->
+     <div class="container">
+       <div class="actionContainer">
+         <div class="action-item">
+           <fieldset>
+             <legend>Size</legend>
+             <select name="template" id="sizeCh" onchange="changeCardSize()">
+               <option value="label">Label</option>
+               <option value="card">Card</option>
+             </select>
+           </fieldset>
+         </div>
+         <div class="action-item">
+           <fieldset>
+             <legend>Templates</legend>
+             <select name="template" id="templateCh">
+               <option value="none">None</option>
+             </select>
+             <input type="button" value="Create Template" onclick="createTemplateJSON()">
+           </fieldset>
+         </div>
+         <div class="action-item">
+           <fieldset>
+             <legend>Print Gallery</legend>
+             <div style="display: flex; justify-content: space-evenly;">
+               <input type="button" value="Add" onclick="addCardToGallery()">
+               <input type="button" value="Remove" onclick="removeLastCard()">
+               <input type="button" id="print" onclick="printGallery()" value="Print">
+             </div>
+           </fieldset>
+         </div>
+         <div id="itemCount"></div>
+       </div>
+
+       <div class="current-item" id="currentItem">
+
+         <div class="left-panel">
+
+           <div class="current-item__form" id="CurrentItemForm">
+           </div>
+         </div>
+
+         <div class="right-panel">
+           <div class="current-item__drawing">
+             <div class="current-item__card">
+               <div class="card" id="currentcard">
+                 <div class="card-border b1" id="card-b1"></div>
+                 <div class="card-border b2" id="card-b2"></div>
+                 <div class="card-border b3" id="card-b3"></div>
+                 <div class="card-border b4" id="card-b4"></div>
+                 <div class="card-border b5" id="card-b5"></div>
+                 <div class="card-border b6" id="card-b6"></div>
+                 <div class="card-border b7" id="card-b7"></div>
+                 <div class="card-border b8" id="card-b8"></div>
+                 <div class="card-border b9" id="card-b9"></div>
+                 <div class="card-border b10" id="card-b10"></div>
+                 <div class="card-border b11" id="card-b11"></div>
+                 <div class="card-border b12" id="card-b12"></div>
+
+                 <div class="card-text t1" id="card-t1"></div>
+                 <div class="card-text t2" id="card-t2"></div>
+                 <div class="card-text t3" id="card-t3"></div>
+                 <div class="card-text t4" id="card-t4"></div>
+                 <div class="card-text t5" id="card-t5"></div>
+                 <div class="card-text t6" id="card-t6"></div>
+                 <div class="card-text t7" id="card-t7"></div>
+                 <div class="card-text t8" id="card-t8"></div>
+                 <div class="card-text t9" id="card-t9"></div>
+                 <div class="card-text t10" id="card-t10"></div>
+                 <div class="card-text t11" id="card-t11"></div>
+                 <div class="card-text t12" id="card-t12"></div>
+
+                 <div class="card-icon i1" id="card-i1"></div>
+                 <div class="card-icon i2" id="card-i2"></div>
+                 <div class="card-icon i3" id="card-i3"></div>
+                 <div class="card-icon i4" id="card-i4"></div>
+                 <div class="card-icon i5" id="card-i5"></div>
+                 <div class="card-icon i6" id="card-i6"></div>
+                 <div class="card-icon i7" id="card-i7"></div>
+                 <div class="card-icon i8" id="card-i8"></div>
+                 <div class="card-icon i9" id="card-i9"></div>
+                 <div class="card-icon i10" id="card-i10"></div>
+                 <div class="card-icon i11" id="card-i11"></div>
+                 <div class="card-icon i12" id="card-i12"></div>
+
+
+               </div>
+             </div>
+           </div>
+         </div>
+
+       </div>
+   
+       <div id="printThis">
+         <div class="print-gallery"></div>
+       </div>
+
+     </div>
+
+  </main>
+  <footer>
+    <!-- Footer -->
+  </footer>
+</body>
+
+</html>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js" defer></script> -->
+<script src="js/jQuery.js" defer></script>
+<script src="js/teamColors.js" defer></script>
+<script src="js/settings.js" defer></script>
+<script src="js/main.js" defer></script>
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<!-- https://teamcolorcodes.com/mlb-color-codes/ -->

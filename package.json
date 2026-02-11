@@ -1,0 +1,42 @@
+{
+  "name": "card-maker",
+  "version": "1.0.0",
+  "description": "A tool for creating customizable sports trading cards and labels",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:css": "sass scss/main.scss css/style.css",
+    "watch:css": "sass --watch scss/main.scss css/style.css",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win portable",
+    "dist:mac": "electron-builder --mac",
+    "dist:all": "electron-builder --win portable --mac"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^26.7.0"
+  },
+  "build": {
+    "appId": "com.cardmaker.app",
+    "productName": "Card Maker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "electron-main.js",
+      "index.html",
+      "css/**/*",
+      "js/**/*",
+      "assets/**/*",
+      "pages/**/*"
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}
